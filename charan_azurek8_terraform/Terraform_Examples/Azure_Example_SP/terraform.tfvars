@@ -1,0 +1,2 @@
+rgname = "NextOpsRGWUS"
+location = "westus"

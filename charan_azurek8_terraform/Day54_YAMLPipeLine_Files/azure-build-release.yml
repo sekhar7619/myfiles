@@ -1,0 +1,81 @@
+trigger:
+- main
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildMavenApp
+        variables:
+          buildConfiguration: 'Release'
+        
+        pool:
+          vmImage: vs2017-win2016
+        
+        steps:
+        - task: AzureResourceManagerTemplateDeployment@3
+          inputs:
+            deploymentScope: 'Resource Group'
+            azureResourceManagerConnection: 'Pay-As-You-Go(a355c32e-4a22-4b05-aab4-be236850fa6e)'
+            subscriptionId: 'a355c32e-4a22-4b05-aab4-be236850fa6e'
+            action: 'Create Or Update Resource Group'
+            resourceGroupName: 'NextOpsRGT09'
+            location: 'East US'
+            templateLocation: 'Linked artifact'
+            csmFile: 'azuredeploy.json'
+            csmParametersFile: 'azuredeploy.parameters.json'
+            deploymentMode: 'Incremental'
+
+        - task: Maven@3
+          inputs:
+            mavenPomFile: 'pom.xml'
+            options: '-DskipITs --settings ./maven/settings.xml'
+            publishJUnitResults: false
+            javaHomeOption: 'JDKVersion'
+            jdkVersionOption: '1.8'
+            mavenVersionOption: 'Default'
+            mavenAuthenticateFeed: false
+            effectivePomSkip: false
+            sonarQubeRunAnalysis: false
+
+        - task: CopyFiles@2
+          inputs:
+            SourceFolder: '$(Build.SourcesDirectory)'
+            Contents: |
+              **/target/*.war
+              *.sql
+            TargetFolder: '$(build.artifactstagingdirectory)'
+
+        - task: PublishBuildArtifacts@1
+          inputs:
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+            ArtifactName: 'drop'
+            publishLocation: 'Container'
+        
+  - stage: Deploy
+    displayName: 'Deploy to Dev'
+    jobs:
+      - deployment: 
+        pool:
+          vmImage: 'vs2017-win2016'
+        environment: 'Dev'
+        strategy:
+          runOnce:
+            deploy:
+             steps:
+               - task: AzureMysqlDeployment@1
+                 inputs:
+                   azureSubscription: 'Pay-As-You-Go(a355c32e-4a22-4b05-aab4-be236850fa6e)'
+                   ServerName: 'nextopsmysqlst07.mysql.database.azure.com'
+                   SqlUsername: 'mysqladmin@nextopsmysqlst07'
+                   SqlPassword: 'P2ssw0rd@123'
+                   TaskNameSelector: 'SqlTaskFile'
+                   SqlFile: '$(PIPELINE.WORKSPACE)/drop/CreateMYSQLDB.sql'
+                   IpDetectionMethod: 'AutoDetect'
+               - task: AzureRmWebAppDeployment@4
+                 inputs:
+                   ConnectionType: 'AzureRM'
+                   azureSubscription: 'Pay-As-You-Go(a355c32e-4a22-4b05-aab4-be236850fa6e)'
+                   appType: 'webAppLinux'
+                   WebAppName: 'nextopswat07'
+                   packageForLinux: '$(PIPELINE.WORKSPACE)/drop/target/myshuttledev.war'
+                   RuntimeStack: 'TOMCAT|8.5-jre8'

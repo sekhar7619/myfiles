@@ -1,0 +1,9 @@
+# Create resource group
+az group create -n NextOpsAKS -l EastUS
+
+# Create azure container register
+az acr create -n nextopsacrt07 -g NextOpsAKS --sku standard 
+
+# Create azure kubernetes service
+az aks create -n nextopsakst07 -g NextOpsAKS --generate-ssh-keys --attach-acr nextopsacrt07
+

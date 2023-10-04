@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {   
+    "siteName": {
+      "value": "nextopswat07"
+    }, 
+    "administratorLogin": {
+      "value": "mysqladmin"
+    },
+    "administratorLoginPassword": {
+      "value": "P2ssw0rd@123"
+    }
+  }
+}

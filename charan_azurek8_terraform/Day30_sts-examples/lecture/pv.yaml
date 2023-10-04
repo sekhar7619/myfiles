@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs-pv0
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1.5Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 192.168.0.120
+    path: "/srv/nfs/sharevolume/pv0"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs-pv1
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1.5Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 192.168.0.120
+    path: "/srv/nfs/sharevolume/pv1"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs-pv2
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1.5Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 192.168.0.120
+    path: "/srv/nfs/sharevolume/pv2"
