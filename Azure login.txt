@@ -1,0 +1,11 @@
+varnica31@gmail.com
+Raja#1991
+
+
+https://github.com/hashicorp/terraform-provider-azurerm/tree/main/examples
+
+https://learn.microsoft.com/en-us/azure/devops/repos/git/merging-with-squash?view=azure-devops
+
+https://learn.microsoft.com/en-us/azure/devops/pipelines/release/deployment-groups/deploying-azure-vms-deployment-groups?view=azure-devops
+
+https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master

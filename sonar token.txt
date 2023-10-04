@@ -1,0 +1,11 @@
+
+
+
+09aabeac260000e34b24e758e5b7fd4096ec284c
+
+
+mvn sonar:sonar \
+  -Dsonar.host.url=http://13.235.91.104:9001 \
+  -Dsonar.login=09aabeac260000e34b24e758e5b7fd4096ec284c
+
+http://54.211.136.127/

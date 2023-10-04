@@ -1,0 +1,38 @@
+New Github token
+
+Username: sekhar7619
+
+Token: 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
+
+Sonar token
+
+Token : d8d086399437ef625ad755e4deb566c1b6b709cc
+
+
+git token
+
+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
+
+github login
+
+sekhar7619
+iplrcb123
+
+one more account Github
+93sekhar@gmail.com
+93sekhar@gmail
+
+docker login 
+anusekhar505
+or
+93sekhar@gmail.com
+9885477938
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+# Add required dependencies for the jenkins package
+sudo yum install java-17-openjdk
+sudo yum install jenkins
+sudo systemctl daemon-reload

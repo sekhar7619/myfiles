@@ -1,0 +1,17 @@
+---
+- hosts: ansible
+  tasks:
+    - name: clone repository
+      git:
+        repo: https://github.com/Ashfaque-9x/Cafe-App.git
+        dest: /opt/docker/cafe-app
+        clone: yes
+        update: yes
+    - name: create docker image
+      command: docker build -t cafe-app:latest /opt/docker/cafe-app
+      args:
+        chdir: /opt/docker/
+    - name: ceate tag to push image to dockerhub
+      command: docker tag cafe-app:latest anusekhar505/cafe-app:latest
+    - name: push docker image
+      command: docker psuh anusekhar505/cafe-app:latest
