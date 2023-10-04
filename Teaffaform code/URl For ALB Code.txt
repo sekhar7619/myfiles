@@ -1,0 +1,13 @@
+https://github.com/kunduso/add-aws-elb-ec2-terraform
+
+
+https://skundunotes.com/2023/07/26/attach-an-application-load-balancer-to-amazon-ec2-instances-in-a-private-subnet/
+
+
+##################### AUTO Scaling_#############
+
+https://adamtheautomator.com/terraform-autoscaling-group/
+
+https://developer.hashicorp.com/terraform/tutorials/aws/aws-asg
+
+git clone https://github.com/hashicorp/learn-terraform-aws-asg.git ------------Auto scaling code 
