@@ -1,0 +1,7 @@
+FROM ubuntu
+
+MAINTAINER ram <ramanji.devops@gmail.com>
+
+RUN apt-get update
+
+CMD ["echo", "Hellow World....! from my first docker image"]

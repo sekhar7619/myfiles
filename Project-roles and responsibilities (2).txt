@@ -1,0 +1,60 @@
+3/13
+----
+Q) Please explain you project day to day activities
+A) 1. In my current project we are following agile methodology. Also we are following 2 weeks sprint duration.	
+   2. In my current project we have Sprint planning session, and Sprint Review session and Daily Stand up meeting.
+   3. In Sprint planning session our team will discuss about the number of tasks about next development version.
+      In the planning session we will provide the estimations for each task.
+   4. Once the planning session is completed then team will work on the number of tasks which is assigned in the 
+	sprint planning session
+   5. We have daily stand up meetings. In that meetings we need to discuss about current task. In case if somebody
+      have blocker about the task we can discuss in the Daily Standup Meeting.
+   6. In my current project we have scrum master. He is responsible for collaborating the team and getting inputs
+      from each and every team member.
+   7. In case if someone not completed the task in the 2 weeks sprint duration then we will move the task into backlog.
+   8. When we are pushing the ticket into backlog section you need to give proper reason or proper explanation about
+      the task.
+   9. Once task completed we have review session with product owner. In the review session if the task is accepted by
+      product owner then we can close the ticket.
+      Example: If the product owner provided some review comments about the task then we need to work on the review 
+               comments
+   10. Once the current sprint is completed then we will move into next sprint.
+   11. In my current project we are using AZUREBOARDS for ticketing system tool or JIRA service now we can use.
+   
+    PROJECT DOMAIN
+---------------------------
+
+  1. Currently we have different different domains in the project. They are below
+
+   a) Banking domain   b) Retail domain   c) Ecommerce domain  d) Health care domain   e) Insurance domain
+   f) Telecom domain   g) internal product i) Stores or Supermarket domain
+
+   APPLICATION DETAILS
+ -------------------------
+
+  1. In my current project we are using JAVA front end and backend applications.
+  2. My development team develop source code and we are providing the proper branching strategy for developers.
+  3. In my current project we are using GITHUB repository as a version control system tool. Here we are 
+      maintaining development branch, release branch, bug fixing branch. 
+
+  Roles and responsibilities
+----------------------------------
+
+   1. I am responsible for build and deployment activities using jenkins CI CD Pipeline and taking care infrastructure as a code
+   2. For example, if developer requires any build and deployment into lower environments (develop environemnt and UAT environment)
+       i used to support developer
+  3. Also responsible for creating cloud resources using Terraform. Example: if the developer required 2 EC2, 1 Azure AKS Clusters,
+       2 user creation in AWS, 2 storage accounts in Azure, etc, these kind of requests we create using terra form
+  4. In my current applicaiton i am working on monitoring also. In case any notification i got from AWS Cloud about server CPU Utilization
+      or memory issue then i used to responsible for working on monitoring part 
+   5. In case developer required any configuration activities then i used to write ansible playbooks and performing the testing on servers
+   6. in my current application we are using micro service based architecure, for containers we are using docker, for orchestration we are 
+      using kubernetes. Here my responsible are mananging kubernetes deployment using jenkins pipeline or deploying the pipeline using Azure
+      devops pipeline.
+   7. In my current application we are following agile methodology. we have the production release on every 2 weeks sprint 
+   8. In the 2 weeks sprint, developer will develop the code and they will commit the code into GITHUB and after that we are performing build
+       and deployment into lower environments (dev and UAT)
+   9. In case if there is no bugs in dev and UAT environments then we will raise a approval ticket in the ticketing system tool azure boards. Once
+     client approved the request then we will plan production activity on every two weeks.
+   10. Apart from these regular activities i used to work on documentation part also. In case any new issue happen then i should create the documentation
+       and i should send in to team.
